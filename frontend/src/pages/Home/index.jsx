@@ -2,6 +2,10 @@ import Header from "../../components/Header";
 import Intro from "./intro";
 import About from "./About";
 import Experiences from "./Experiences";
+import Projects from "./Projects";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import LeftSider from "./LeftSider";
 function index() {
   return (
     <div>
@@ -10,6 +14,10 @@ function index() {
         <Intro />
         <About/>
         <Experiences/>
+        <Projects/>
+        <Contact/>
+        <Footer/>
+        <LeftSider/>
       </div>
     </div>
   );

@@ -8,8 +8,8 @@ function Experiences() {
     <div>
       <SectionTitle title="Experiences" />
       <div className="flex py-10 gap-20 sm:flex-col">
-        <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-scroll sm:w-full">
-          <div>
+        <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
+          <div className="flex sm:flex-row flex-col sm:gap-5">
             {experiences.map((experience, index) => (
               <div
                 className="cursor-pointer py-5"
@@ -18,9 +18,9 @@ function Experiences() {
                 }}
               >
                 <h1
-                  className={`text-l px-4 ${
+                  className={`text-xl px-5 ${
                     selectedItemIndex === index
-                      ? `text-tertiery border-tertiery border-l-4 -ml-[3px] bg-[#3e7c7a1e] py-4`
+                      ? `text-tertiery border-tertiery border-l-4 -ml-[3px] bg-[#3e7c7a1e] py-3`
                       : `text-white`
                   }`}
                 >
@@ -30,7 +30,7 @@ function Experiences() {
             ))}
           </div>
         </div>
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col gap-5">
            <h1 className="text-secondary text-xl">
             {experiences[selectedItemIndex].title}
           </h1>

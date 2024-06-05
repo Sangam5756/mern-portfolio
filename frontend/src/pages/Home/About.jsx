@@ -13,6 +13,7 @@ function About() {
             background="transparent"
             speed="1"
             autoplay
+            loop
           ></dotlottie-player>
         </div>
         <div className="flex flex-col gap-3 w-1/2 sm:w-full text-white">

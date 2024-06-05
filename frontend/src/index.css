@@ -4,6 +4,33 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
+* {
     font-family: "Montserrat"
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0A192F;
+
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #1297b831;
+}
+
+i {
+    cursor: pointer;
+
+}
+i:hover{
+    color: white;
+    
+
 }
