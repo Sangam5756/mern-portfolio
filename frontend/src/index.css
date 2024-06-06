@@ -8,6 +8,7 @@
   font-family: "Montserrat";
 }
 
+
 /* width */
 ::-webkit-scrollbar {
   width: 8px;
@@ -86,4 +87,25 @@ i:hover {
   100% {
     opacity: 1;
   }
+}
+
+
+
+/* INPUT STYLING */
+
+input,textarea{
+  height: 40px;
+  border: 1px solid gray;
+  width: 100%;
+  padding-left: 20px;
+}
+
+input:focus{
+  outline: none;
+  border: 2px solid rgb(24, 23, 23);
+}
+
+textarea{
+  height: 100px;
+  padding-top: ;
 }
