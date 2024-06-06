@@ -2,7 +2,7 @@ const intros = [
   {
     welcomeText: "Hi , I am",
     firstName: "sangam",
-    LastName: "Mundhe",
+    lastName: "Mundhe",
     caption: "I build things for web",
     description:
       "i am full-stack developer web developer, Currently I am Working as MERN developer in India, Also do open contribution to share my knowledge that i have gained through my carrier.",
