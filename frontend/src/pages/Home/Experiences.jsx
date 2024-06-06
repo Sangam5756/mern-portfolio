@@ -11,7 +11,7 @@ function Experiences() {
         <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:flex-row sm:overflow-x-scroll sm:w-full">
           <div className="flex sm:flex-row flex-col sm:gap-5">
             {experiences.map((experience, index) => (
-              <div
+              <div key={index}
                 className="cursor-pointer py-5"
                 onClick={() => {
                   setSelectedItemIndex(index);

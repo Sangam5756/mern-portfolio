@@ -10,7 +10,7 @@ function Projects() {
                 <div className="flex flex-col gap-10 border-l-2 border-[#135e4c82] w-1/3 sm:gap-5 sm:flex-row sm:overflow-x-auto sm:w-full">
                     <div className="flex sm:flex-row sm:gap-5 flex-col">
                         {projects.map((project, index) => (
-                            <div
+                            <div key={index}
                                 className="cursor-pointer py-5"
                                 onClick={() => {
                                     setSelectedItemIndex(index);

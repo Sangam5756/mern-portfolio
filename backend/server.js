@@ -1,21 +1,20 @@
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import dbconnect from "./config/db.config.js";
+import portfolioRoute from "./routes/portfolio.route.js";
 
 dotenv.config();
-const app =express();
+const app = express();
+app.use(cors());
 
+const PORT = process.env.PORT || 3000;
 
-const PORT  = process.env.PORT || 3000;
+app.use(express.json());
 
+app.use("/api/portfolio", portfolioRoute);
 
-app.get("/",(req, res) =>{
-    res.send("This is root");
-})
-
-
-
-app.listen(PORT,()=>{
-    console.log(`server is listening on http://localhost:${PORT}`)
-    dbconnect();
-})
+app.listen(PORT, () => {
+  console.log(`server is listening on http://localhost:${PORT}`);
+  dbconnect();
+});
