@@ -3,6 +3,7 @@ function intro() {
   const { loading, portfoliodata } = useSelector((state) => state.root);
   const { intro } = portfoliodata;
   const { firstName, lastName, welcomeText, description, caption } = intro;
+  
   return (
     <>
       <div className="h-[80vh] bg-primary flex flex-col items-start justify-center gap-8 py-10">

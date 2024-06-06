@@ -1,13 +1,16 @@
 import React from "react";
 import { Form, Input } from "antd";
+import { useSelector } from "react-redux";
 function AdminIntro() {
+  const {  portfoliodata } = useSelector((state) => state.root);
+
   const onFinish = (values) => {
     console.log(values);
   };
   return (
     <>
       <div>
-        <Form onFinish={onFinish} layout="vertical">
+        <Form onFinish={onFinish} layout="vertical" initialValues={portfoliodata?.intro}>
           <Form.Item name="welcomeText" label="welcomeText">
             <input placeholder="welcomeText" />
           </Form.Item>

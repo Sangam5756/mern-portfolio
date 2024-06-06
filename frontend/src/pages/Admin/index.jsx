@@ -3,12 +3,14 @@ import Header from "../../components/Header";
 import { Tabs } from "antd";
 import AdminIntro from "./AdminIntro";
 import AdminAbout from "./AdminAbout";
+import { useSelector } from "react-redux";
 
 function index() {
+  const { portfoliodata } = useSelector((state) => state.root);
   return (
     <div>
       <Header />
-      <div className="mt-5 p-5">
+     {portfoliodata &&  <div className="mt-5 p-5">
         <Tabs
           defaultActiveKey="1"
           items={[
@@ -24,7 +26,7 @@ function index() {
             },
           ]}
         />
-      </div>
+      </div>}
     </div>
   );
 }
