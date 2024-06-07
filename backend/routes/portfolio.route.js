@@ -1,8 +1,7 @@
 import express from "express";
-import models from '../models/portfolio.model.js';
+import models from "../models/portfolio.model.js";
 
 const { Intro, About, Experience, Project, Contact } = models;
-
 
 const router = express.Router();
 
@@ -26,4 +25,43 @@ router.get("/get-portfolio-data", async (req, res) => {
   }
 });
 
-export default  router;
+router.post("/update-intro", async (req, res) => {
+  try {
+    const intro = await Intro.findOneAndUpdate(
+      {
+        _id: req.body._id,
+      },
+      req.body
+    );
+
+    res.status(200).send({
+      data: intro,
+      success: true,
+      message: "Intro Updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/update-about", async (req, res) => {
+  try {
+    const about = await About.findByIdAndUpdate(
+      {
+        _id: req.body._id,
+      },
+      req.body
+    );
+    res.status(200).send({
+      data: about,
+      success: true,
+      message: "About Updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+
+
+export default router;
