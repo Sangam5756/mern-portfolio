@@ -24,7 +24,7 @@ router.get("/get-portfolio-data", async (req, res) => {
     res.send(500).send(error);
   }
 });
-
+// update intro
 router.post("/update-intro", async (req, res) => {
   try {
     const intro = await Intro.findOneAndUpdate(
@@ -43,7 +43,7 @@ router.post("/update-intro", async (req, res) => {
     res.status(500).send(error);
   }
 });
-
+// Update about
 router.post("/update-about", async (req, res) => {
   try {
     const about = await About.findByIdAndUpdate(
@@ -62,6 +62,19 @@ router.post("/update-about", async (req, res) => {
   }
 });
 
-
+// add Experience
+router.post("/add-experience", async (req, res) => {
+  try {
+    const experience = new Experience(req.body);
+    await experience.save();
+    res.status(200).send({
+      data: experience,
+      success: true,
+      message: "Experience Added successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 
 export default router;
