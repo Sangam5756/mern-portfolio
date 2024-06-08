@@ -1,8 +1,9 @@
 import express from "express";
 import models from "../models/portfolio.model.js";
+import { projects } from "../../frontend/resources/projects.js";
 
 const { Intro, About, Experience, Project, Contact } = models;
-
+import User from "../models/user.model.js";
 const router = express.Router();
 
 router.get("/get-portfolio-data", async (req, res) => {
@@ -24,6 +25,7 @@ router.get("/get-portfolio-data", async (req, res) => {
     res.send(500).send(error);
   }
 });
+
 // update intro
 router.post("/update-intro", async (req, res) => {
   try {
@@ -43,6 +45,7 @@ router.post("/update-intro", async (req, res) => {
     res.status(500).send(error);
   }
 });
+
 // Update about
 router.post("/update-about", async (req, res) => {
   try {
@@ -77,26 +80,7 @@ router.post("/add-experience", async (req, res) => {
   }
 });
 
-// Update Experience
-router.post("/update-intro", async (req, res) => {
-  try {
-    const intro = await Intro.findOneAndUpdate(
-      {
-        _id: req.body._id,
-      },
-      req.body
-    );
-
-    res.status(200).send({
-      data: intro,
-      success: true,
-      message: "Intro Updated successfully",
-    });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-// Update about
+// Update experience
 router.post("/update-experience", async (req, res) => {
   try {
     const experience = await Experience.findByIdAndUpdate(
@@ -114,7 +98,7 @@ router.post("/update-experience", async (req, res) => {
     res.status(500).send(error);
   }
 });
-
+// Delete Experience
 router.post("/delete-experience", async (req, res) => {
   try {
     const experience = await Experience.findByIdAndDelete({
@@ -130,4 +114,98 @@ router.post("/delete-experience", async (req, res) => {
   }
 });
 
+// add Projects
+router.post("/add-projects", async (req, res) => {
+  try {
+    const project = await new Project(req.body);
+    await project.save();
+    res.status(200).send({
+      data: project,
+      success: true,
+      message: "Project Added Successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/update-projects", async (req, res) => {
+  try {
+    const project = await Project.findByIdAndUpdate(
+      {
+        _id: req.body._id,
+      },
+      req.body
+    );
+    res.status(200).send({
+      data: project,
+      success: true,
+      message: "Project updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+router.post("/delete-projects", async (req, res) => {
+  try {
+    const project = await Project.findByIdAndDelete({ _id: req.body._id });
+
+    res.status(200).send({
+      data: project,
+      success: true,
+      message: "Project Deleted SuccessFully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// update Contact
+router.post("/update-contact", async (req, res) => {
+  try {
+    const intro = await Contact.findOneAndUpdate(
+      {
+        _id: req.body._id,
+      },
+      req.body
+    );
+
+    res.status(200).send({
+      data: intro,
+      success: true,
+      message: "Contact Updated successfully",
+    });
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+// Admin Login
+
+router.post("/admin-login", async (req, res) => {
+  try {
+    const admin = await User.findOne({
+      username: req.body.username,
+      password: req.body.password,
+    });
+    admin.password ="";
+
+    if (admin) {
+      res.status(200).send({
+        data: admin,
+        success: true,
+        message: "Login Successfully",
+      });
+    } else {
+      res.status(200).send({
+        data: admin,
+        success: false,
+        message: "Invalid Username and Password",
+      });
+    }
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
 export default router;

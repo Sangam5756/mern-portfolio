@@ -89,7 +89,7 @@ function AdminExperience() {
           Add Experience
         </button>
       </div>
-      <div className="grid grid-cols-4 gap-5 mt-5">
+      <div className="grid grid-cols-4 sm:grid-cols-1 gap-5 mt-5">
         {experiences.map((experience) => (
           <div className="shadow border border-gray-400 p-5  flex flex-col">
             <h1 className="text-primary text-xl font-bold">

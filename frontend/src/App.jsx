@@ -11,6 +11,7 @@ import {
   ReloadData,
 } from "./redux/rootSlice";
 import Admin from "./pages/Admin";
+import Login from "../src/pages/Admin/Login"
 export default function App() {
   const { loading, portfoliodata, reloadData } = useSelector(
     (state) => state.root
@@ -55,6 +56,7 @@ export default function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/admin" element={<Admin />} />
+          <Route path="/admin-login" element={<Login />} />
         </Routes>
       </BrowserRouter>
     </>
