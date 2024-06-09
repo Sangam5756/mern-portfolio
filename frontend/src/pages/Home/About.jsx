@@ -2,12 +2,12 @@
 import { useSelector } from "react-redux";
 import SectionTitle from "../../components/SectionTitle";
 
-function About() {
+function About({aboutRef}) {
   const { loading, portfoliodata } = useSelector((state) => state.root);
   const { about } = portfoliodata;
   const {skills, lottieURL, description1, description2} = about;
   return (
-    <div>
+    <div  ref={aboutRef} className="about-section">
       <SectionTitle title={"About"} />
       <div className="flex w-full items-center sm:flex-col">
         <div className="h-[70vh] w-1/2 sm:w-full">

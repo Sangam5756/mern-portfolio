@@ -154,6 +154,9 @@ function AdminProjects() {
             <Form.Item name="link" label="Link">
               <input placeholder="Link" />
             </Form.Item>
+            <Form.Item name="githubrepo" label="Github-Link">
+              <input placeholder="Github-Link" />
+            </Form.Item>
             <Form.Item name="technologies" label="Technologies">
               <input placeholder="Technologies" />
             </Form.Item>

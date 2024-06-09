@@ -84,6 +84,9 @@ const projectSchema = new mongoose.Schema({
     type: Array,
     require: true,
   },
+  githubrepo:{
+    type:String
+  }
 });
 
 const contactSchema = new mongoose.Schema({

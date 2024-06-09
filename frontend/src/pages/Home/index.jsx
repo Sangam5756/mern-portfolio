@@ -16,7 +16,7 @@ function index() {
         <div className="bg-primary px-40 sm:px-5">
           <Intro />
           <About />
-          <Experiences />
+          {/* <Experiences /> */}
           <Projects />
           <Contact />
           <Footer />
