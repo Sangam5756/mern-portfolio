@@ -15,7 +15,7 @@ function index() {
       {portfoliodata && (
         <div className="bg-primary px-40 sm:px-5">
           <Intro />
-          <About />
+          { /*<About />*/}
           {/* <Experiences /> */}
           <Projects />
           <Contact />
