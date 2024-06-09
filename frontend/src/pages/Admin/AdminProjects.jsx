@@ -55,7 +55,7 @@ function AdminProjects() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:3000/api/portfolio/delete-projects",
+        "/api/portfolio/delete-projects",
         {
           _id: item._id,
         }

@@ -17,7 +17,7 @@ function AdminContact() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:3000/api/portfolio/update-contact",
+        "/api/portfolio/update-contact",
         {
           ...values,
           _id: portfoliodata.contact._id,

@@ -25,7 +25,7 @@ export default function App() {
       }, 2000);
       dispatch(showLoading());
       const response = await axios.get(
-        "http://localhost:3000/api/portfolio/get-portfolio-data"
+        "/api/portfolio/get-portfolio-data"
       );
       // console.log(response.data);
       dispatch(SetportfolioData(response.data));

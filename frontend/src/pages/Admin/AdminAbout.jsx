@@ -19,7 +19,7 @@ function AdminAbout() {
       values.skills = tempSkills;
       dispatch(showLoading);
       const response = await axios.post(
-        "http://localhost:3000/api/portfolio/update-about",
+        "/api/portfolio/update-about",
         {
           ...values,
           _id: portfoliodata.about._id,

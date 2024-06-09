@@ -16,7 +16,7 @@ function Login() {
     try {
       dispatch(showLoading);
       const res = await axios.post(
-        "http://localhost:3000/api/portfolio/admin-login",user);
+        "/api/portfolio/admin-login",user);
       dispatch(hideLoading);
       if (res.data.success) {
         message.success(res.data.message);

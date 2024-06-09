@@ -53,7 +53,7 @@ function AdminExperience() {
     try {
       dispatch(showLoading());
       const response = await axios.post(
-        "http://localhost:3000/api/portfolio/delete-experience",
+        "/api/portfolio/delete-experience",
         {
           _id: item._id,
         }
